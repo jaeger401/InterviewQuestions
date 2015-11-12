@@ -17,9 +17,13 @@
 #### So...what's in this repo, anyway?
 
 This repo includes a series of sample coding interview questions and my
-honest answers to them. Yes, even if I botched the answer. I've found these
-questions freely on the web and included attributions given wherever
-possible.
+honest answers to them. *Yes, even if I botched the answer.* My answers may
+be wrong, or they may have bugs or other logical flaws. 
+Being right isn't the point -- *showing a thought process is!* 
+
+I've found these questions freely on the web and included attributions 
+given wherever possible. If you're the author and object to having me post
+your question here, please let me know.
 
 The answer to each question was written in an interview-like setting:
 half-hour time limit, with the thought process spelled out as completely as
@@ -27,4 +31,3 @@ possible. I drafted my answers on paper, simulating a whiteboard, and then
 later transcribed them into markdown. Code was generally written and tested
 later to see how close to the answer I came. Some answers may have later
 revisions to correct bugs and reflect additional thought.
-
