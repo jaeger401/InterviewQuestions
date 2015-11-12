@@ -1,6 +1,6 @@
 ##2nd Largest Item in a Binary Search Tree
 
-######Source: [interviewcake.com](https://www.interviewcake.com/question/second-largest-item-in-bst)
+######Source: One of my five free questions on [interviewcake.com](https://www.interviewcake.com/question/second-largest-item-in-bst)
 
 ###The Problem
 
@@ -32,7 +32,7 @@ Let's clarify some assumptions:
 1. There is a function somewhere that handles the actual logic of inserting values into the BST properly. The class definition above doesn't do this.
 2. The BST in question has at least two elements. Removing this restriction is easy to fix, but amounts to error-checking instead of solving the logic of the question.
 3. The BST in question is a vanilla unbalanced tree. It's not an AVL tree, red-black tree, splay tree, or anything like that.
-4. In the following examples, I'm going to use the elements of the set [1..10] as the values of my tree.
+4. If the largest value is in the BST is duplicated, it's OK to return it as the second-largest value.
 
 ####Working Out The Logic
 
@@ -42,13 +42,11 @@ The position of the largest element is going to be determined by the order in wh
 
 * If it was added first, it'll be the root of the tree. We'll know this because the root of the tree will have no right-hand child node.
 
-![Largest as root](images/largest-root.png)
+![Largest as root](images/10-9.png)
 
 * Otherwise, it'll be the right-most node of the tree.
     * Wait...the right-most node has no right-hand child. Aha, that means that the first case above elides with this one!
     * *Therefore, the largest value is always the right-most node, which may be the root.* (Editor's note: Felt dumb for not remembering that straight off.)
-
-(insert images here)
 
 **Next, find the 2nd-largest element in relationship to the largest element.**
 
@@ -57,7 +55,7 @@ Thinking through where the 2nd-largest could be in the tree, I see the following
 1. At the root, if it's inserted first.
 2. The parent of the largest element.
    * Wait, this is equivalent to the first case, because if it's the root, then by definition the only element in its right sub-tree would be the largest element.
-3. The largest node of the left sub-tree of the largest node.
+3. The largest node of the left sub-tree of the largest node. (Anyone smell recursion?)
 
 ####The Algorithm
 
@@ -71,11 +69,11 @@ if largest.left == nil
 
 On average, find_largest would run in O(log n) time.
 The worst-case run time would be O(n) if the elements were inserted in ascending order.
-Best-case, the results would come back in O(1) time, if the elements had been inserted in descending order.
+Best-case, the results would come back in O(1) time if the elements had been inserted in descending order.
 
 ###My code (in 13 more minutes)
 
-It's hard to show an evolving though process in markdown. This is the final state of the implementation at the end of the remaining 13 minutes of this question.
+It's hard to show an evolving paper-and-pencil thought process in markdown. This is the final state of the implementation at the end of the remaining 13 minutes of this question.
 
 ```python
 def insert(value, tree_node): # This is the missing insert function from above. Assume it's implemented.
