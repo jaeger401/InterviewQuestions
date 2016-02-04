@@ -9,9 +9,9 @@
    coding interview.
 3. Virtually no one except those who are actively seeking new employment
    spends time practicing interview questions.
-4. Practice makes <strike>you gooder</strike> perfect.
+4. Practice makes ~~you gooder~~ perfect.
 5. Being good at things is good.
-6. I am both seeking new employment AND desirous of being good at things.
+6. I am ~~both seeking new employment AND~~ desirous of being good at things. [Update: I have a great job, and this repo helped me get it.]
 7. I should practice doing coding interview questions.
 
 #### So...what's in this repo, anyway?
